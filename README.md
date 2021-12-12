@@ -1,2 +1,2 @@
 # tutorial_web
-php - sql - javascrip - html - css
+php - sql - javascript - html - css
