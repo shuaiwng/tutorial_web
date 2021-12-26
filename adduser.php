@@ -34,6 +34,38 @@ error_reporting(E_ALL);
   {
     echo "</head><body>Form data successfully validated:
       $forename, $surname, $username, $password, $age, $email.</body></html>";
+
+    // This is where you would enter the posted fields into a database,
+    // preferably using hash encryption for the password.
+    require_once 'login.php';
+    $connection = new mysqli($hn, $un, $pw, $db);
+    
+    //if ($connection->connect_error) die("Fatal Error");
+    //$query = "CREATE TABLE users(
+    //  forename VARCHAR(32) NOT NULL,
+    //  surname VARCHAR(32) NOT NULL,
+    //  username VARCHAR(32) NOT NULL,
+    //  password VARCHAR(255) NOT NULL,
+    //  age VARCHAR(32) NOT NULL,
+    //  email VARCHAR(64) NOT NULL
+    //)";
+
+    //$result = $connection->query($query);
+    //if (!$result) die("Fatal Error by query.");
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+
+
+    //function add_user($conn, $fn, $sn, $un, $pw, $age, $mail){
+    //  $query = "INSERT INTO users VALUES('$fn', '$sn', '$un', '$pw', '$age', '$mail')";
+    //  $result = $conn->query($query);
+    //}
+    //add_user($connection, $forename, $surname, $username, $hash, $age, $email); 
+
+      $query = "INSERT INTO users VALUES('$forename', '$surname', '$username', '$hash', '$age', '$email')";
+      $result = $connection->query($query);
+    // if (!$result) die("Fatal Error by query.");
+   echo("Error query: " . $connection->error);
+
     exit;
   }
   
