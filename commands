@@ -66,6 +66,9 @@ ALTER TABLE classics CHANGE type category VARCHAR(16);
 == remove a column ==
 ALTER TABLE classics DROP pages;
 
+== delete a row ==
+delete from mytable where myusername='abcd';
+
 == match ==
 alter table classics add FULLTEXT(author,title);
 SELECT author, title From classics
