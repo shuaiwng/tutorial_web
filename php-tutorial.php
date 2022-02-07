@@ -4,12 +4,12 @@
 	</head>	
 
 	<body>
-		This is Arch Linux, running PHP
+		This is Lambda Linux, running PHP
 	
 <?php
 echo "Hello Worlds!";
 $team = array("Mike", "Stef", "Ana");
-$username = "Meowww";
+$username = "M";
 echo "<br>";
 echo "The username is: $username";
 echo "<br>";
@@ -20,7 +20,7 @@ echo "<br>";
 $msgs = 7;
 echo "you have " . $msgs . " messages";
 echo "<br>";
-$author = "SW";
+$author = "banana";
 $out = <<<_ENDDD
 developers, developers,
 dev, devvv
